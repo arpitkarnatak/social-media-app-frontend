@@ -1,6 +1,6 @@
 import React, { SyntheticEvent, useContext, useEffect, useState } from 'react'
 import { GlobalContext } from '../../context/GlobalContext'
-import User from '../User/User'
+import User, { UserAvatarOnly } from '../User/User'
 import { CreatePostSectionStyle, MinimalStyledForm, MinimalTextInput, MinimalTitleInput } from './styles'
 import { TextButton } from '../../styles/buttons'
 import { BodySM } from '../../styles/typography'
@@ -32,16 +32,17 @@ export default function CreatePostSection(
 
     return (
         <CreatePostSectionStyle>
-            <User user={authenticatedUser.data} /> says
+            <UserAvatarOnly user={authenticatedUser.data} />
             <MinimalStyledForm onSubmit={handleCreatePost}>
-                <MinimalTitleInput placeholder='Add a fun title' value={title} onChange={(e) => setTitle(e.target.value)}>
+                <MinimalTitleInput placeholder="What's on your mind" value={title} onChange={(e) => setTitle(e.target.value)} disabled={!!!authenticatedUser.data}>
                 </MinimalTitleInput>
-                <MinimalTextInput maxLength={140} placeholder='Add some description' value={body} onChange={(e) => setBody(e.target.value)}>
+                <MinimalTextInput maxLength={140} placeholder="Elaborate what's on your mind lol" value={body} onChange={(e) => setBody(e.target.value)} disabled={!!!authenticatedUser.data}>
                 </MinimalTextInput>
-                <div style={{ width: '100%', display: 'flex', justifyContent: 'flex-end', gap: '12px', alignItems: 'baseline'}}>
+                <div style={{ width: '100%', display: 'flex', justifyContent: 'flex-end', gap: '12px', alignItems: 'baseline' }}>
                     <BodySM>{body.length}/140</BodySM>
-                    <TextButton type='submit' disabled={!!isCreatingPost || body.length < 3 || title.length < 3}>
-                        Create Post
+                    <TextButton type='submit' disabled={!!isCreatingPost || body.length < 3 || title.length < 3 || !!!authenticatedUser.data}>
+                        {!!authenticatedUser.data && 'Create Post'}
+                        {!!!authenticatedUser.data && 'View only mode'}
                     </TextButton>
                 </div>
             </MinimalStyledForm>

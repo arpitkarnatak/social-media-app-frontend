@@ -15,10 +15,30 @@ export const PostContainer = styled.div`
     margin: 0;
     font-size: 14px;
   }
+
+
+
+  a {
+    all: unset;
+
+    &:hover {
+        text-decoration: underline;
+        cursor: pointer;
+    }
+  }
 `;
 
 export const PostTitle = styled.div`
   margin: 0 0 8px 0;
+
+  > a {
+    all: unset;
+
+    :hover {
+        text-decoration: underline;
+        cursor: pointer;
+    }
+  }
 `;
 
 export const PostBody = styled.div`

@@ -15,7 +15,7 @@ export default function Post({
 }: IPost) {
     return (
         <PostContainer>
-            <Title20>Posted by <a>{author.displayName}</a> {moment(createdAt.toString()).fromNow()}</Title20>
+            <Title20>Posted by <Link to={`/user/${author.username}`}>{author.displayName}</Link> {moment(createdAt.toString()).fromNow()}</Title20>
             <PostTitle>
                 <Link to={`/post/${id}`}>
                     <Title32>{title}</Title32>

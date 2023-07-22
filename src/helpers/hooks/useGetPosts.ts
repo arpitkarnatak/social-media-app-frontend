@@ -17,7 +17,6 @@ export default function useGetPosts() {
       const response = await api.get("/user/post", {
         withCredentials: true,
       });
-      console.log("All posts for tl", response.data.data);
       return response.data.data;
     } catch (err) {
       console.log("Error", err);

@@ -9,12 +9,19 @@ export const CreatePostSectionStyle = styled.div`
   padding: 24px 3%;
   width: 100%;
   display: flex;
-  flex-direction: column;
-  align-items: baseline;
+  gap: 12px;
+  align-items: flex-start;
 
   > p {
     margin: 0;
     font-size: 14px;
+  }
+
+  > img {
+    height: 40px;
+    width: 40px;
+    border-radius: 40px;
+    border: 2px solid black;
   }
 `;
 

@@ -18,3 +18,19 @@ export const UserContainer = styled.div`
   align-items: center;
   gap: 8px;
 `;
+
+export const UserAvatarOnlyImage = styled.img`
+  width: 48px;
+  height: 48px;
+  border-radius: 48px;
+  border: 2px solid black;
+`
+export const UserAvatarOnlyImageSvg = styled.div`
+  width: 48px;
+  height: 48px;
+  border-radius: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 3px solid black;
+`
