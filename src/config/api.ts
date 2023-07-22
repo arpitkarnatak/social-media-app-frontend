@@ -3,5 +3,5 @@ import { REACT_APP_BACKEND_URL } from "./env";
 
 export const api = axios.create({
   baseURL: REACT_APP_BACKEND_URL,
-  timeout: 1000,
+  timeout: 5000,
 });
