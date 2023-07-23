@@ -6,5 +6,6 @@ export const MainHeaderContainer = styled.header`
     position: sticky;
     top: 0;
     display:flex;
-    justify-content: flex-end
+    justify-content: space-between;
+    flex-wrap: wrap;
 `

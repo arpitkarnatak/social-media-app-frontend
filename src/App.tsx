@@ -10,6 +10,7 @@ import GlobalContextProvider, { GlobalContext } from './context/GlobalContext';
 import Home from './pages/Home';
 import Header from './components/Header';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Profile from './pages/Profile';
 
 
 
@@ -36,6 +37,7 @@ function App() {
           <BrowserRouter>
             <Routes>
               <Route path='/' element={<Home />} />
+              <Route path='/user/:userId' element={<Profile />} />
             </Routes>
           </BrowserRouter>
         </div>

@@ -40,7 +40,7 @@ export default function CreatePostSection(
                 </MinimalTextInput>
                 <div style={{ width: '100%', display: 'flex', justifyContent: 'flex-end', gap: '12px', alignItems: 'baseline' }}>
                     <BodySM>{body.length}/140</BodySM>
-                    <TextButton type='submit' disabled={!!isCreatingPost || body.length < 3 || title.length < 3 || !!!authenticatedUser.data}>
+                    <TextButton type='submit' disabled={!!isCreatingPost || body.length < 3 || title.length < 3 || !!!authenticatedUser.data} style={{ width: 'fit-content' }}>
                         {!!authenticatedUser.data && 'Create Post'}
                         {!!!authenticatedUser.data && 'View only mode'}
                     </TextButton>

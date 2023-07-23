@@ -3,6 +3,7 @@ export interface IUser {
   username: string;
   displayName: string;
   avatar: string;
+  createdAt: string;
 }
 
 export interface IPost {

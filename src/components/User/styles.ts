@@ -19,12 +19,17 @@ export const UserContainer = styled.div`
   gap: 8px;
 `;
 
-export const UserAvatarOnlyImage = styled.img`
-  width: 48px;
-  height: 48px;
-  border-radius: 48px;
+interface IUserAvatarImageOnlyProps {
+  size?: string;
+}
+
+export const UserAvatarOnlyImage = styled.img<IUserAvatarImageOnlyProps>`
+  width: ${({ size }) => size || '48px'};
+  height: ${({ size }) => size || '48px'};
+  border-radius: ${({ size }) => size || '48px'};
   border: 2px solid black;
-`
+`;
+
 export const UserAvatarOnlyImageSvg = styled.div`
   width: 48px;
   height: 48px;
