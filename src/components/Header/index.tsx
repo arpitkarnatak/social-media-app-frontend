@@ -4,13 +4,14 @@ import { GlobalContext } from '../../context/GlobalContext'
 import User, { UserAvatarOnly } from '../User/User'
 import { TextButton } from '../../styles/buttons'
 import GetStatus from './GetStatus'
+import { REACT_APP_BACKEND_URL } from '../../config/env'
 
 async function handleLogin() {
-    window.location.href = 'http://localhost:8080/auth/google'
+    window.location.href = `${REACT_APP_BACKEND_URL}/auth/google`
 }
 
 async function handleLogout() {
-    window.location.href = 'http://localhost:8080/auth/logout'
+    window.location.href = `${REACT_APP_BACKEND_URL}/auth/logout`
 }
 
 export default function Header() {
