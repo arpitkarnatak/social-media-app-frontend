@@ -5,6 +5,7 @@ import axios from "axios";
 import { api } from "../../config/api";
 
 export default function useCreatePosts() {
+  const PostCreatedEvent = new CustomEvent("post-created", { bubbles: true });
   const queryClient = new QueryClient();
   const { isLoading, isError, mutate } = useMutation(
     ["create-post"],
@@ -27,7 +28,11 @@ export default function useCreatePosts() {
       }
     },
     {
-      onSuccess: () => queryClient.invalidateQueries("create-post"),
+      onSuccess: () => {
+        queryClient.invalidateQueries("create-post")
+        dispatchEvent(PostCreatedEvent)
+        console.log("Successful Posts and event", PostCreatedEvent )
+      },
     }
   );
   return {

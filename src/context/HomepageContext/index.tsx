@@ -1,4 +1,4 @@
-import React, { PropsWithChildren, createContext } from 'react'
+import React, { PropsWithChildren, createContext, useEffect } from 'react'
 import useGetPosts from '../../helpers/hooks/useGetPosts'
 import useCreatePosts from '../../helpers/hooks/useCreatePost';
 
@@ -20,6 +20,16 @@ export default function HomepageContextProvider({ children }: PropsWithChildren<
   const posts = useGetPosts();
   const createPost = useCreatePosts()
 
+
+  useEffect(() => {
+    window.addEventListener("post-created", (e) => {
+        posts.refetch()
+    }, false)
+
+    return () => window.removeEventListener("post-created", (e) => {
+        posts.refetch()
+    })
+}, [])
   return (
     <HomepageContext.Provider value={{
       posts,

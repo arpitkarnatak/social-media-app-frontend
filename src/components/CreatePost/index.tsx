@@ -26,8 +26,14 @@ export default function CreatePostSection(
     const [body, setBody] = useState("")
 
     async function handleCreatePost(e: SyntheticEvent) {
-        e.preventDefault()
-        createPost([title, body])
+        try {
+            e.preventDefault()
+            createPost([title, body])
+        }
+
+        catch (err) {
+            console.error("Error Creating Post")
+        }
     }
 
     return (

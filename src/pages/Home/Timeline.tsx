@@ -1,6 +1,6 @@
 import React from 'react'
 import { IPost } from '../../types'
-import Post from '../../components/Post/Post'
+import Post from '../../components/Post/PostComponent'
 
 interface ITimelineProps {
   posts?: IPost[],
@@ -13,7 +13,6 @@ export default function Timeline({
   posts,
   isLoadingPosts,
   isErrorPosts,
-  refetchPosts
 }: ITimelineProps) {
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '12px'}}>
