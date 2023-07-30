@@ -3,6 +3,7 @@ import { QueryClient, useMutation } from "react-query";
 import { HomepageContext } from "../../context/HomepageContext";
 import axios from "axios";
 import { api } from "../../config/api";
+import { Endpoints } from "../endpoints";
 
 export default function useCreatePosts() {
   const PostCreatedEvent = new CustomEvent("post-created", { bubbles: true });
@@ -12,7 +13,7 @@ export default function useCreatePosts() {
     async (params: any) => {
       const [title, body] = params;
       try {
-        await api.post("/user/post/create",
+        await api.post(Endpoints.Post,
           {
             params: {
               title,

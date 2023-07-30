@@ -2,6 +2,7 @@ import axios from "axios";
 import React from "react";
 import { useQuery } from "react-query";
 import { api } from "../../config/api";
+import { Endpoints } from "../endpoints";
 
 export default function useGetPosts(userId?: string) {
   const {
@@ -15,7 +16,7 @@ export default function useGetPosts(userId?: string) {
   } = useQuery(["get-posts"], async () => {
     try {
       const params = userId ? new URLSearchParams([["userId", userId]]) : {};
-      const response = await api.get("/user/post", {
+      const response = await api.get(Endpoints.Post, {
         params,
         withCredentials: true,
       });

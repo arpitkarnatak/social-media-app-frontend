@@ -29,6 +29,8 @@ export default function CreatePostSection(
         try {
             e.preventDefault()
             createPost([title, body])
+            setTitle("")
+            setBody("")
         }
 
         catch (err) {

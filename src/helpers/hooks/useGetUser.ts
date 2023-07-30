@@ -1,6 +1,7 @@
 import React from 'react'
 import { useQuery } from 'react-query'
 import { api } from '../../config/api'
+import { Endpoints } from '../endpoints'
 
 export default function useGetUser() {
     const {
@@ -14,7 +15,7 @@ export default function useGetUser() {
     } = useQuery(['fetch-user'],
         async function getUser() {
             try {
-                const response = await api.get("/user", {
+                const response = await api.get(Endpoints.User, {
                     withCredentials: true
                 })
                 return response.data.data
