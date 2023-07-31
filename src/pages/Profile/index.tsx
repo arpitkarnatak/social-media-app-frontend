@@ -15,6 +15,7 @@ export default function Profile() {
         )
     else {
         return <>
+        Loading Profile
         </>
     }
 }

@@ -15,9 +15,7 @@ export default function useGetUser() {
     } = useQuery(['fetch-user'],
         async function getUser() {
             try {
-                const response = await api.get(Endpoints.User, {
-                    withCredentials: true
-                })
+                const response = await api.get(Endpoints.User)
                 return response.data.data
             } catch (err) {
                 console.log("Error", err)

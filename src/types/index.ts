@@ -9,6 +9,7 @@ export interface IUser {
 export interface IPost {
   id: string;
   authorUserId: string;
+  comments: any[],
   title: string;
   body: string;
   author: IUser;

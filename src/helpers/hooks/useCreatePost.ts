@@ -19,9 +19,6 @@ export default function useCreatePosts() {
               title,
               body,
             },
-          },
-          {
-            withCredentials: true,
           }
         );
       } catch (err) {
