@@ -14,7 +14,7 @@ export default function useGetProfile(userId: string) {
         console.log("Error while fetching User", err);
         return undefined;
       }
-    }
+    },
   );
   return {
     data,

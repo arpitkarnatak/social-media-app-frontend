@@ -4,7 +4,8 @@ import { fontBaseCss } from "../../styles/typography";
 export const CreatePostSectionStyle = styled.div`
   border-radius: 1px;
   background: var(--gray, #b8b8b8);
-  box-shadow: -2px -2px 1px 0px rgba(0, 0, 0, 0.8) inset,
+  box-shadow:
+    -2px -2px 1px 0px rgba(0, 0, 0, 0.8) inset,
     2px 2px 1px 0px rgba(255, 255, 255, 0.5) inset;
   padding: 24px 3%;
   width: 100%;
@@ -30,7 +31,7 @@ export const MinimalStyledForm = styled.form`
   flex-direction: column;
   width: 100%;
   gap: 12px;
-`
+`;
 
 export const MinimalTitleInput = styled.input`
   background: none;
@@ -39,9 +40,9 @@ export const MinimalTitleInput = styled.input`
   ${fontBaseCss};
   font-size: 24px;
   font-weight: bold;
-  outline: none; 
+  outline: none;
   padding: 8px;
-`
+`;
 
 export const MinimalTextInput = styled.textarea`
   background: none;
@@ -49,6 +50,6 @@ export const MinimalTextInput = styled.textarea`
   border-bottom: 1px solid black;
   ${fontBaseCss};
   font-size: 24px;
-  outline: none; 
+  outline: none;
   padding: 8px;
-`
+`;

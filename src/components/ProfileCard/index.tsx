@@ -10,12 +10,11 @@ interface IProfileCardProps {
   user: IUser;
 }
 
-
 enum ActiveTab {
   TWEETS,
   TWEETS_AND_REPLIES,
   MEDIA,
-  LIKES
+  LIKES,
 }
 
 export default function ProfileCard({ user }: IProfileCardProps) {
@@ -30,21 +29,27 @@ export default function ProfileCard({ user }: IProfileCardProps) {
 
         <Title24>Some bio.... (This feature is yet to come)</Title24>
 
-
-        <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#797979'}}>
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            gap: "8px",
+            color: "#797979",
+          }}
+        >
           <BiCalendar />
           <Title24 color="#797979">
             Joined {moment(user.createdAt).format("MMM Do YYYY")}
           </Title24>
         </div>
-
       </ProfileSectionStyle>
 
-      <div style={{ width: '100%', display: 'flex' }}>
+      <div style={{ width: "100%", display: "flex" }}>
         <TextButton>Tweets</TextButton>
         <TextButton>Tweets and Replies</TextButton>
         <TextButton>Media</TextButton>
         <TextButton>Likes</TextButton>
       </div>
-    </>);
+    </>
+  );
 }

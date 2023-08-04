@@ -24,9 +24,9 @@ interface IUserAvatarImageOnlyProps {
 }
 
 export const UserAvatarOnlyImage = styled.img<IUserAvatarImageOnlyProps>`
-  width: ${({ size }) => size || '48px'};
-  height: ${({ size }) => size || '48px'};
-  border-radius: ${({ size }) => size || '48px'};
+  width: ${({ size }) => size || "48px"};
+  height: ${({ size }) => size || "48px"};
+  border-radius: ${({ size }) => size || "48px"};
   border: 2px solid black;
 `;
 
@@ -38,4 +38,4 @@ export const UserAvatarOnlyImageSvg = styled.div`
   justify-content: center;
   align-items: center;
   border: 3px solid black;
-`
+`;

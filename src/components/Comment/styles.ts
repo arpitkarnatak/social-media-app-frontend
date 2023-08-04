@@ -3,7 +3,8 @@ import { styled } from "styled-components";
 export const CommentContainer = styled.div`
   border-radius: 1px;
   background: var(--gray, #b8b8b8);
-  box-shadow: -2px -2px 1px 0px rgba(0, 0, 0, 0.8) inset,
+  box-shadow:
+    -2px -2px 1px 0px rgba(0, 0, 0, 0.8) inset,
     2px 2px 1px 0px rgba(255, 255, 255, 0.5) inset;
   padding: clamp(16px, 3%, 24px);
   width: 100%;
@@ -16,14 +17,12 @@ export const CommentContainer = styled.div`
     font-size: 14px;
   }
 
-
-
   a {
     all: unset;
 
     &:hover {
-        text-decoration: underline;
-        cursor: pointer;
+      text-decoration: underline;
+      cursor: pointer;
     }
   }
 `;
@@ -33,8 +32,8 @@ export const CommentTitle = styled.div`
     all: unset;
 
     :hover {
-        text-decoration: underline;
-        cursor: pointer;
+      text-decoration: underline;
+      cursor: pointer;
     }
   }
 `;

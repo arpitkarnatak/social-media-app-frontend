@@ -11,24 +11,22 @@ export default function useCreatePosts() {
     async (params: any) => {
       const [title, body] = params;
       try {
-        await api.post(Endpoints.Post,
-          {
-            params: {
-              title,
-              body,
-            },
-          }
-        );
+        await api.post(Endpoints.Post, {
+          params: {
+            title,
+            body,
+          },
+        });
       } catch (err) {
         console.log("Error", err);
       }
     },
     {
       onSuccess: () => {
-        queryClient.invalidateQueries("create-post")
-        dispatchEvent(PostCreatedEvent)
+        queryClient.invalidateQueries("create-post");
+        dispatchEvent(PostCreatedEvent);
       },
-    }
+    },
   );
   return {
     isLoading,

@@ -9,21 +9,20 @@ export interface IUser {
 export interface IPost {
   id: string;
   authorUserId: string;
-  comments: any[],
+  comments: any[];
   title: string;
   body: string;
   author: IUser;
-  createdAt: String,
+  createdAt: String;
 }
 
-
 export interface IComment {
-  id: string,
-  authorUserId: string,
-  author: IUser
-  postId: string,
-  replyText: string,
-  parentCommentId?: string,
-  replies: IComment[],
-  createdAt: string
+  id: string;
+  authorUserId: string;
+  author: IUser;
+  postId: string;
+  replyText: string;
+  parentCommentId?: string;
+  replies: IComment[];
+  createdAt: string;
 }

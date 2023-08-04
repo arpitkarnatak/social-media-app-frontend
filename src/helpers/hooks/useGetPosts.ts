@@ -17,7 +17,7 @@ export default function useGetPosts(userId?: string) {
     try {
       const params = userId ? new URLSearchParams([["userId", userId]]) : {};
       const response = await api.get(Endpoints.Post, {
-        params
+        params,
       });
       return response.data.data;
     } catch (err) {

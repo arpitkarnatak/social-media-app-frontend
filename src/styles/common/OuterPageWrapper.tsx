@@ -1,12 +1,10 @@
 import { PropsWithChildren } from "react";
 import { MaxWidthWrapper, OuterPageWrapperStyle } from ".";
 
-export function OuterPageWrapper({children}: PropsWithChildren) {
-    return (
+export function OuterPageWrapper({ children }: PropsWithChildren) {
+  return (
     <OuterPageWrapperStyle>
-        <MaxWidthWrapper>
-            {children}
-        </MaxWidthWrapper>
-        </OuterPageWrapperStyle>
-        )
+      <MaxWidthWrapper>{children}</MaxWidthWrapper>
+    </OuterPageWrapperStyle>
+  );
 }
