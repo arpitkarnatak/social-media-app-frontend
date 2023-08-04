@@ -1,7 +1,5 @@
-import React, { useContext } from "react";
+import React from "react";
 import { QueryClient, useMutation } from "react-query";
-import { HomepageContext } from "../../context/HomepageContext";
-import axios from "axios";
 import { api } from "../../config/api";
 import { Endpoints } from "../endpoints";
 
@@ -29,7 +27,6 @@ export default function useCreatePosts() {
       onSuccess: () => {
         queryClient.invalidateQueries("create-post")
         dispatchEvent(PostCreatedEvent)
-        console.log("Successful Posts and event", PostCreatedEvent )
       },
     }
   );

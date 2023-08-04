@@ -15,3 +15,15 @@ export interface IPost {
   author: IUser;
   createdAt: String,
 }
+
+
+export interface IComment {
+  id: string,
+  authorUserId: string,
+  author: IUser
+  postId: string,
+  replyText: string,
+  parentCommentId?: string,
+  replies: IComment[],
+  createdAt: string
+}

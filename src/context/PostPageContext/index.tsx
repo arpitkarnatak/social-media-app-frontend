@@ -1,6 +1,8 @@
-import React, { PropsWithChildren, createContext } from 'react'
+import React, { PropsWithChildren, createContext, useEffect } from 'react'
 import useGetSinglePost from '../../helpers/hooks/useGetSinglePost'
 import { IPost } from '../../types'
+import useCreateComment from '../../helpers/hooks/useCreateComment';
+import useGetComments from '../../helpers/hooks/useGetComments';
 
 interface IPostPageContextProviderProps extends PropsWithChildren {
     postId: string
@@ -12,30 +14,59 @@ interface IPostQuery {
     isError: boolean
 }
 
+interface ICreateCommentQuery {
+    isLoading: boolean,
+    isError: boolean,
+    mutate: (params: unknown[]) => void,
+}
+
+interface IGetCommentsQuery {
+    data?: any[]
+    isLoading: boolean,
+    isError: boolean,
+    mutate: () => void,
+}
+
 interface IPostPageContext {
-    post: IPostQuery
+    post: IPostQuery,
+    createComment: ICreateCommentQuery,
+    comments: IGetCommentsQuery
 }
 
 export const PostPageContext = createContext<IPostPageContext>({
     post: {
         isLoading: true,
         isError: false,
+    },
+    createComment: {
+        isLoading: false,
+        isError: false,
+        mutate: (params: unknown) => { }
+    },
+    comments: {
+        isLoading: false,
+        isError: false,
+        mutate: () => { }
     }
 })
 
 export default function PostPageContextProvider({postId, children}: IPostPageContextProviderProps) {
     const post = useGetSinglePost(postId)
-    const LoadingState =  !!post.isLoading
+    const createComment = useCreateComment()
 
-    console.log("Ob", Object.keys(post ?? {}))
-    if (LoadingState) {
-      return (<div>
-        Loading
-      </div>)
-    }
+    const comments  = useGetComments({postId})
+
+    useEffect(() => {
+        comments.mutate()
+        window.addEventListener("create-comment", (e) => console.log("Comment was created", e))
+        return () => window.removeEventListener("create-comment", (e) => console.log("Comment was created", e))
+    }, [])
+
     return (
         <PostPageContext.Provider value={{
-            post
+            post,
+            createComment,
+            comments
         }}>
             {children}
         </PostPageContext.Provider>
