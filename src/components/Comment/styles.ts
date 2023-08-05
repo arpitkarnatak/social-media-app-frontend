@@ -42,3 +42,14 @@ export const CommentBody = styled.div`
   margin: 6px 0;
   font-size: 24px;
 `;
+
+export const ButtonContainer = styled.div`
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+
+  > * {
+    width: fit-content;
+  }
+`

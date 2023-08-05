@@ -22,7 +22,6 @@ export default function useGetComments({
         const response = await api.get("/comment", {
           params,
         });
-        console.log("res", response.data.data);
         return response.data.data;
       } catch (err) {
         console.error("ERR:", err);

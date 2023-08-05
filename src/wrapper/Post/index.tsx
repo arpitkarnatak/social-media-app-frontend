@@ -11,8 +11,6 @@ export default function PostPageWrapper() {
   if (!!!post.data) {
     return <>Post not found</>;
   }
-
-  console.log("COmme", comments);
   return (
     <OuterPageWrapper>
       <Post {...post.data} />

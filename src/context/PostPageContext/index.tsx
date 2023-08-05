@@ -59,17 +59,7 @@ export default function PostPageContextProvider({
 
   const comments = useGetComments({ postId });
 
-  useEffect(() => {
-    comments.mutate();
-    window.addEventListener("create-comment", (e) =>
-      console.log("Comment was created", e),
-    );
-    return () =>
-      window.removeEventListener("create-comment", (e) =>
-        console.log("Comment was created", e),
-      );
-  }, []);
-
+  useEffect(() => comments.mutate(), [])
   return (
     <PostPageContext.Provider
       value={{

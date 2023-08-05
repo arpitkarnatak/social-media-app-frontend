@@ -19,6 +19,9 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background: var(--gray, #b8b8b8);
   color: #000000;
+  border: 2px solid #b8b8b8;
+  background: #008080;
+  min-height: 100vh;
 }
 
 code {

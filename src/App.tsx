@@ -7,6 +7,7 @@ import Header from "./components/Header";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Profile from "./pages/Profile";
 import Post from "./pages/Post";
+import ScrollToTopButton from "./components/ScrollToTop";
 
 function App() {
   const queryClient = new QueryClient({
@@ -22,6 +23,7 @@ function App() {
       <GlobalContextProvider>
         <div className="App">
           <Header />
+          <ScrollToTopButton />
           <BrowserRouter>
             <Routes>
               <Route path="/" element={<Home />} />

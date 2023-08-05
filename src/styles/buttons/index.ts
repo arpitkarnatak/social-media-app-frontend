@@ -56,8 +56,16 @@ export const IconButtonStyle = styled.button`
 
   &:hover {
     cursor: pointer;
+    background: var(--grey-grey, #c0c0c0);
+    /* outside/1 */
+    box-shadow:
+      3px 3px 0px 0px #dfdfdf inset,
+      -3px -3px 0px 0px #7f7f7f inset,
+      2px 2px 0px 0px #fff inset,
+      -2px -2px 0px 0px #000 inset,
+      1px 1px 0px 0px #000 inset,
+      -1px -1px 0px 0px #000 inset;
   }
-
   &:disabled {
     border-radius: 1px;
     background: var(--light-gray, #e1e1e1);
