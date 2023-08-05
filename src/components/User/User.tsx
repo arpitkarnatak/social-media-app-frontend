@@ -8,6 +8,7 @@ import {
   UserImage,
 } from "./styles";
 import { AiOutlineUser } from "react-icons/ai";
+import { Link } from "react-router-dom";
 
 interface IUserThumbnailProps {
   user?: IUser;
@@ -25,7 +26,12 @@ export function UserAvatarOnly({ user }: IUserThumbnailProps) {
   }
   return (
     <UserContainer>
-      <UserAvatarOnlyImage src={user.avatar} alt={`${user?.username}-image`} />
+    <a href={`/user/${user.username}`}>
+        <UserAvatarOnlyImage
+          src={user.avatar}
+          alt={`${user?.username}-image`}
+        />
+      </a>
     </UserContainer>
   );
 }
@@ -40,7 +46,12 @@ export default function User({ user }: IUserThumbnailProps) {
   }
   return (
     <UserContainer>
-      <UserImage src={user.avatar} alt="Profile Picture" />
+      <a href={`/user/${user.username}`}>
+        <UserAvatarOnlyImage
+          src={user.avatar}
+          alt={`${user?.username}-image`}
+        />
+      </a>
       <DisplayName>{user.displayName}</DisplayName>
     </UserContainer>
   );
