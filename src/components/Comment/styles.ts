@@ -10,7 +10,6 @@ export const CommentContainer = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: baseline;
 
   > p {
     margin: 0;
