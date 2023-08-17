@@ -1,6 +1,6 @@
 import { ReactNode, PropsWithChildren, createContext } from "react";
-import useGetUser from "../../helpers/hooks/useGetUser";
-import { IUser } from "../../types";
+import useGetUser from "helpers/hooks/useGetUser";
+import { IUser } from "types";
 import { RefetchOptions, UseQueryResult } from "react-query";
 
 interface IAuthenticatedUserQuery {

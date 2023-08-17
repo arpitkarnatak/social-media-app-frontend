@@ -19,6 +19,7 @@ export default function Header() {
   const { authenticatedUser } = useContext(GlobalContext);
   return (
     <MainHeaderContainer>
+      
       <GetStatus />
       {!!!authenticatedUser.data ? (
         <TextButton onClick={handleLogin} style={{ width: "fit-content" }}>

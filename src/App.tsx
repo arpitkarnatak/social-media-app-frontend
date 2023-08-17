@@ -1,13 +1,13 @@
 import React from "react";
-import "./App.css";
+import "App.css";
 import { QueryClient, QueryClientProvider } from "react-query";
-import GlobalContextProvider from "./context/GlobalContext";
-import Home from "./pages/Home";
-import Header from "./components/Header";
+import GlobalContextProvider from "context/GlobalContext";
+import Home from "pages/Home";
+import Header from "components/Header";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Profile from "./pages/Profile";
-import Post from "./pages/Post";
-import ScrollToTopButton from "./components/ScrollToTop";
+import Profile from "pages/Profile";
+import Post from "pages/Post";
+import ScrollToTopButton from "components/ScrollToTop";
 
 function App() {
   const queryClient = new QueryClient({

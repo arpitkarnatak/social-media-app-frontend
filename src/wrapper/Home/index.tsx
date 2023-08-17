@@ -1,8 +1,8 @@
 import React, { useContext } from "react";
-import { HomepageContext } from "../../context/HomepageContext";
-import Timeline from "../../pages/Home/Timeline";
-import CreatePostSection from "../../components/CreatePost";
-import { MaxWidthWrapper } from "../../styles/common";
+import { HomepageContext } from "context/HomepageContext";
+import Timeline from "pages/Home/Timeline";
+import CreatePostSection from "components/CreatePost";
+import { MaxWidthWrapper } from "styles/common";
 
 export default function HomepageWrapper() {
   const { posts, createPost } = useContext(HomepageContext);

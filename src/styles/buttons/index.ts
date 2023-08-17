@@ -1,5 +1,5 @@
 import { styled } from "styled-components";
-import { fontBaseCss } from "../typography";
+import { fontBaseCss } from "styles/typography";
 
 export const TextButton = styled.button`
   border-radius: 1px;

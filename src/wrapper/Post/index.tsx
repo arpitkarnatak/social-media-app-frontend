@@ -1,9 +1,9 @@
 import React, { useContext, useEffect } from "react";
-import { PostPageContext } from "../../context/PostPageContext";
-import Post from "../../components/Post/PostComponent";
-import { OuterPageWrapper } from "../../styles/common/OuterPageWrapper";
-import CreateCommentSection from "../../components/CreateComment";
-import CommentComponent from "../../components/Comment";
+import { PostPageContext } from "context/PostPageContext";
+import Post from "components/Post/PostComponent";
+import { OuterPageWrapper } from "styles/common/OuterPageWrapper";
+import CreateCommentSection from "components/CreateComment";
+import CommentComponent from "components/Comment";
 
 export default function PostPageWrapper() {
   const { post, createComment, comments } = useContext(PostPageContext);

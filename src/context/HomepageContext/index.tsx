@@ -1,6 +1,6 @@
 import React, { PropsWithChildren, createContext, useEffect } from "react";
-import useGetPosts from "../../helpers/hooks/useGetPosts";
-import useCreatePosts from "../../helpers/hooks/useCreatePost";
+import useGetPosts from "helpers/hooks/useGetPosts";
+import useCreatePosts from "helpers/hooks/useCreatePost";
 
 export const HomepageContext = createContext({
   posts: {

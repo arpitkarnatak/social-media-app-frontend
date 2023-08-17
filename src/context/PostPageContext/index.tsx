@@ -1,8 +1,8 @@
 import React, { PropsWithChildren, createContext, useEffect } from "react";
-import useGetSinglePost from "../../helpers/hooks/useGetSinglePost";
-import { IPost } from "../../types";
-import useCreateComment from "../../helpers/hooks/useCreateComment";
-import useGetComments from "../../helpers/hooks/useGetComments";
+import useGetSinglePost from "helpers/hooks/useGetSinglePost";
+import { IPost } from "types";
+import useCreateComment from "helpers/hooks/useCreateComment";
+import useGetComments from "helpers/hooks/useGetComments";
 
 interface IPostPageContextProviderProps extends PropsWithChildren {
   postId: string;

@@ -1,6 +1,6 @@
 import React, { PropsWithChildren, createContext } from "react";
-import useGetPosts from "../../helpers/hooks/useGetPosts";
-import useGetProfile from "../../helpers/hooks/useGetProfile";
+import useGetPosts from "helpers/hooks/useGetPosts";
+import useGetProfile from "helpers/hooks/useGetProfile";
 import { QueryClient } from "react-query";
 
 interface IProfilepageContextProviderProps extends PropsWithChildren {

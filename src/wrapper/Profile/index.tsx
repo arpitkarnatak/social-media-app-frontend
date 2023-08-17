@@ -1,9 +1,8 @@
 import React, { useContext } from "react";
-import Timeline from "../../pages/Home/Timeline";
-import CreatePostSection from "../../components/CreatePost";
-import { MaxWidthWrapper } from "../../styles/common";
-import { ProfilepageContext } from "../../context/ProfilepageContext";
-import ProfileCard from "../../components/ProfileCard";
+import Timeline from "pages/Home/Timeline";
+import { MaxWidthWrapper } from "styles/common";
+import { ProfilepageContext } from "context/ProfilepageContext";
+import ProfileCard from "components/ProfileCard";
 
 export default function ProfilepageWrapper() {
   const { posts, profile } = useContext(ProfilepageContext);

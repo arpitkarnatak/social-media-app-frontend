@@ -1,6 +1,6 @@
 import React from "react";
-import { IPost } from "../../types";
-import Post from "../../components/Post/PostComponent";
+import { IPost } from "types";
+import Post from "components/Post/PostComponent";
 
 interface ITimelineProps {
   posts?: IPost[];
