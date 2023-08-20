@@ -8,6 +8,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Profile from "pages/Profile";
 import Post from "pages/Post";
 import ScrollToTopButton from "components/ScrollToTop";
+import { Title36, Title64 } from "styles/typography";
 
 function App() {
   const queryClient = new QueryClient({

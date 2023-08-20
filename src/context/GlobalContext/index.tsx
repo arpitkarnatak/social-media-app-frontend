@@ -10,7 +10,9 @@ interface IAuthenticatedUserQuery {
   refetch?: (options?: RefetchOptions) => Promise<UseQueryResult>;
 }
 
-export const GlobalContext = createContext({
+export const GlobalContext = createContext<{
+  authenticatedUser: IAuthenticatedUserQuery
+}>({
   authenticatedUser: {
     data: undefined,
     isLoading: false,

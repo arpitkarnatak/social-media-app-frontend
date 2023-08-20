@@ -4,6 +4,8 @@ export interface IUser {
   displayName: string;
   avatar: string;
   createdAt: string;
+  followerCount: number;
+  followingCount: number;
 }
 
 export interface IPost {

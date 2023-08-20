@@ -17,6 +17,11 @@ export const fontBaseCss = css`
   line-height: normal;
 `;
 
+export const Title64 = styled(FontBase)`
+  font-weight: 700;
+  font-size: 64px;
+`;
+
 export const Title36 = styled(FontBase)`
   font-weight: 700;
   font-size: 36px;

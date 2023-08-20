@@ -4,7 +4,7 @@ import { api } from "../../config/api";
 import { Endpoints } from "../endpoints";
 
 export default function useGetProfile(userId: string) {
-  const { data, isLoading, isError, isRefetching, isRefetchError } = useQuery(
+  const { data, isLoading, isError, isRefetching, isRefetchError, refetch } = useQuery(
     ["get-profile"],
     async () => {
       try {
@@ -20,5 +20,6 @@ export default function useGetProfile(userId: string) {
     data,
     isLoading: isLoading || isRefetching,
     isError: isError || isRefetchError,
+    refetch
   };
 }
